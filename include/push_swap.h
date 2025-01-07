@@ -6,7 +6,7 @@
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 18:53:58 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/07 19:57:39 by tishihar         ###   ########.fr       */
+/*   Updated: 2025/01/07 22:25:58 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 // include
 # include "libft.h"
+# include "stdbool.h"
 
 typedef struct s_node
 {
@@ -29,7 +30,7 @@ typedef struct s_stack
 	t_node	*top;
 	t_node	*bottom;
 	int		size;
-}	t_stack
+}	t_stack;
 
 
 
