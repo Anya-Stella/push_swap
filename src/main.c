@@ -6,11 +6,11 @@
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 17:35:23 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/07 18:51:45 by tishihar         ###   ########.fr       */
+/*   Updated: 2025/01/07 20:50:19 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushswap.h"
+#include "push_swap.h"
 
 int	main(int argc, char **argv)
 {
