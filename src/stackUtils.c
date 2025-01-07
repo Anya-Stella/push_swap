@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   stackUtils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/07 17:35:23 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/07 18:29:48 by tishihar         ###   ########.fr       */
+/*   Created: 2025/01/07 18:41:32 by tishihar          #+#    #+#             */
+/*   Updated: 2025/01/07 18:41:43 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushswap.h"
-
-int	main(int argc, char **argv)
+void	init_stack(t_stack *stackPointer)
 {
-	t_stack stA;
-	t_stack stB;
-
-	// init stack
-	init_stack(&stA);
-	init_stack(&stB);
-	
-
-
+	stackPointer->top = NULL;
+	stackPointer->bottom = NULL;
+	stackPointer->size = 0;
 }
