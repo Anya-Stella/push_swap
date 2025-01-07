@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pushswap.h                                        :+:      :+:    :+:   */
+/*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/07 16:49:38 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/07 16:58:09 by tishihar         ###   ########.fr       */
+/*   Created: 2025/01/07 18:57:40 by tishihar          #+#    #+#             */
+/*   Updated: 2025/01/07 19:23:01 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSHSWAP_H
-# define PUSHSWAP_H
+#include "push_swap.h"
 
-typedef struct s_node
+void	init_stack(t_stack *stackPointer)
 {
-	int				value;
+	stackPointer->top = NULL;
+	stackPointer->bottom = NULL;
+	stackPointer->size = 0;
+}
 
-	struct s_node	prev;
-	struct s_node	next;
-}	t_node;
-
-typedef struct s_stack
+void	create_node(int	value)
 {
-	t_node	*top;
-	t_node	*bottom;
-	int		size;
-}	t_stack
+	t_node	*nodePointer;
 
+	// init
+	nodePointer = (t_node *)ft_calloc(1, sizeof(t_node));
+	if (!nodePointer)
+		return NULL;
 
-
-
-#endif
+	nodePointer->value = value;
+	nodePointer->prev = NULL;
+	nodePointer->next = NULL;
+}

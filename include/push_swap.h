@@ -1,18 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stackUtils.c                                       :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/07 18:41:32 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/07 18:41:43 by tishihar         ###   ########.fr       */
+/*   Created: 2025/01/07 18:53:58 by tishihar          #+#    #+#             */
+/*   Updated: 2025/01/07 19:38:55 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	init_stack(t_stack *stackPointer)
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
+
+// include
+# include "libft.h"
+
+typedef struct s_node
 {
-	stackPointer->top = NULL;
-	stackPointer->bottom = NULL;
-	stackPointer->size = 0;
-}
+	int				value;
+
+	struct s_node	prev;
+	struct s_node	next;
+}	t_node;
+
+typedef struct s_stack
+{
+	t_node	*top;
+	t_node	*bottom;
+	int		size;
+}	t_stack
+
+
+
+
+#endif
