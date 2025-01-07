@@ -6,7 +6,7 @@
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 18:57:40 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/07 20:18:26 by tishihar         ###   ########.fr       */
+/*   Updated: 2025/01/07 20:45:56 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	create_node(int value)
 
 void	push_top(t_stack *stack_, t_node *node_)
 {
-	if (!stack || !node)
+	if (!stack_ || !node_)
 		return (NULL);
 	if (stack_->size == 0)
 	{
@@ -45,6 +45,24 @@ void	push_top(t_stack *stack_, t_node *node_)
 		node_->next = stack_->top;
 		stack_->top->prev = node_;
 		stack_->top = node_;
+	}
+	stack_->size += 1;
+}
+
+void	push_bottom(t_stack *stack_, t_node *node_)
+{
+	if (!stack_ || !node_)
+		return (NULL);
+	if (stack_->size == 0)
+	{
+		stack_->top = node_;
+		stack_->bottom = node_;
+	}
+	else
+	{
+		node_->prev = stack_->bottom;
+		stack_->bottom->next = node_;
+		stack_->bottom = node_;
 	}
 	stack_->size += 1;
 }
