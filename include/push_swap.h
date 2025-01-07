@@ -6,7 +6,7 @@
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 18:53:58 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/07 19:38:55 by tishihar         ###   ########.fr       */
+/*   Updated: 2025/01/07 19:57:39 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ typedef struct s_node
 {
 	int				value;
 
-	struct s_node	prev;
-	struct s_node	next;
+	struct s_node	*prev;
+	struct s_node	*next;
 }	t_node;
 
 typedef struct s_stack
