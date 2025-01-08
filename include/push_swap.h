@@ -6,7 +6,7 @@
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 18:53:58 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/08 15:43:34 by tishihar         ###   ########.fr       */
+/*   Updated: 2025/01/08 16:32:29 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,7 @@ void	push_bottom(t_stack *stack_, t_node *node_);
 // validation
 bool	validation_atoi(const char *str, int *out);
 bool	is_already_exist(t_stack *stack_, int value);
+
+// test
+void	print_stack(t_stack *stack);
 #endif

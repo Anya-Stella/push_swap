@@ -81,10 +81,10 @@ $(LIBFT):
 
 # cleans
 clean:
-    rm -f $(OBJS)
-    $(MAKE) -C $(LIBFT_DIR) fclean
+	rm -f $(OBJS)
+	$(MAKE) -C $(LIBFT_DIR) fclean
 fclean: clean
-    rm -f $(NAME)
+	rm -f $(NAME)
 re: fclean all
 devre: fclean dev
 
