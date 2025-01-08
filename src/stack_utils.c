@@ -6,7 +6,7 @@
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 18:57:40 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/07 22:25:14 by tishihar         ###   ########.fr       */
+/*   Updated: 2025/01/08 15:22:16 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,28 @@ void	init_stack(t_stack *stack_)
 	stack_->bottom = NULL;
 	stack_->size = 0;
 }
+void	vacuum_stack_nodes(t_stack *stack_)
+{
+	t_node	*curr;
+	t_node	*next;
 
-void	create_node(int value)
+	if (!stack_)
+		return ;
+
+	curr = stack_->top;
+	
+	while (curr)
+	{
+		next = curr->next;
+
+		free(curr);
+		curr = next;
+	}
+
+	init_stack(stack_);
+}
+
+t_node	*create_node(int value)
 {
 	t_node	*node_;
 
@@ -29,12 +49,14 @@ void	create_node(int value)
 	node_->value = value;
 	node_->prev = NULL;
 	node_->next = NULL;
+
+	return node_;
 }
 
 void	push_top(t_stack *stack_, t_node *node_)
 {
 	if (!stack_ || !node_)
-		return (NULL);
+		return ;
 	if (stack_->size == 0)
 	{
 		stack_->top = node_;
@@ -52,7 +74,7 @@ void	push_top(t_stack *stack_, t_node *node_)
 void	push_bottom(t_stack *stack_, t_node *node_)
 {
 	if (!stack_ || !node_)
-		return (NULL);
+		return ;
 	if (stack_->size == 0)
 	{
 		stack_->top = node_;

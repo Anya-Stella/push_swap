@@ -6,7 +6,7 @@
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 21:21:31 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/08 12:36:28 by tishihar         ###   ########.fr       */
+/*   Updated: 2025/01/08 14:46:39 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ bool    validation_atoi(const char *str, int *out)
     
     while (*str)
     {
-        if (ft_isdigit(*str))
+        if (!ft_isdigit(*str))
             return (false);
         digit = *str - '0';
         if ((result > border) || (result == border && digit > lim))
@@ -52,8 +52,8 @@ bool	is_already_exist(t_stack *stack_, int value)
 	while (curr)
 	{
 		if (curr->value == value)
-			return (false);
+			return (true);
 		curr = curr->next;
 	}
-	return (true);
+	return (false);
 }
