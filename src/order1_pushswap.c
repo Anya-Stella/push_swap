@@ -36,7 +36,7 @@ void	ss(t_stack *a, t_stack *b)
 // push a
 void	pa(t_stack *a)
 {
-
+	
 }
 
 // push	b

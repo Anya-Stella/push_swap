@@ -6,7 +6,7 @@
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 19:08:17 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/08 19:27:58 by tishihar         ###   ########.fr       */
+/*   Updated: 2025/01/08 20:12:54 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,37 @@ void	push_bottom(t_stack *stack_, t_node *node_)
 		stack_->bottom = node_;
 	}
 	stack_->size += 1;
+}
+
+t_node	*pop_top(t_stack *stack_)
+{
+	t_node	*temp;
+
+	if (!stack_ || stack_->size == 0)
+		return (NULL);
+	
+	// pop
+	temp = stack_->top;
+
+	if (stack_->size == 1)
+	{
+		stack_->bottom = NULL;
+		stack_->top = NULL;
+	}
+	else
+	{
+		stack_->top = stack_->top->next;
+		stack_->top->prev = NULL;
+	}
+	stack_->size--;
+
+	// seikei
+	temp->next = NULL;
+	temp->prev = NULL;
+	return (temp);
+}
+
+t_node	pop_bottom()
+{
+	
 }
