@@ -48,6 +48,7 @@ SRCS := \
 	order1_pushswap.c \
 	order2_rotate.c \
 	order3_rotate_reverse.c \
+	order4_utils.c \
 	test.c \
     main.c
 

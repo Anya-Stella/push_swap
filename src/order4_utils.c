@@ -1,46 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   order1_pushswap.c                                   :+:      :+:    :+:   */
+/*   order4_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/08 17:05:10 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/08 17:08:03 by tishihar         ###   ########.fr       */
+/*   Created: 2025/01/08 19:08:17 by tishihar          #+#    #+#             */
+/*   Updated: 2025/01/08 19:14:17 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// swap a
-void	sa(t_stack *a)
+bool	swap(t_stack *stack_)
 {
-	if (swap(a))
-		write(1, "sa\n", 3);
-}
+	t_node	*first;
+	t_node	*second;
 
-// swap b
-void	sb(t_stack *b)
-{
-	if (swap(b))
-		write(1, "sb\n", 3);
-}
+	if (!stack_ || stack_->size < 2)
+		return (false);
 
-// do sa and sb
-void	ss(t_stack *a, t_stack *b)
-{
-	if (swap(a) && swap(b))
-		write(1, "ss\n", 3);
-}
+	first = stack_->top;
+	second = stack_->top->next;
 
-// push a
-void	pa(t_stack *a)
-{
+	//  swap
+	first->next = second->next;
+	if (second->next)
+		second->next->prev  = first;
+	second->prev = NULL;
+	second->next = first;
 
-}
+	stack_->top = second;
 
-// push	b
-void	pb(t_stack *b)
-{
-	
+	if (stack_->size == 2)
+		stack_->bottom = first;
+	return (true);
 }
