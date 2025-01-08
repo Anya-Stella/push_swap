@@ -6,24 +6,26 @@
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 17:11:45 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/08 17:13:23 by tishihar         ###   ########.fr       */
+/*   Updated: 2025/01/08 17:19:59 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
 // reverse rotate a
-void	rra()
+void	rra(t_stack *a)
 {
 
 }
 
 // reverse rotate b
-void	rrb()
+void	rrb(t_stack *b)
 {
 
 }
 
 // do rra and rrb
-void	rrr()
+void	rrr(t_stack *a, t_stack *b)
 {
 	
 }

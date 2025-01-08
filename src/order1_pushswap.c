@@ -10,20 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
 // swap a
-void	sa()
+void	sa(t_stack *a)
 {
 
 }
 
 // swap b
-void	sb()
+void	sb(t_stack *b)
 {
 	
 }
 
 // do sa and sb
-void	ss()
+void	ss(t_stack *a, t_stack *b)
 {
 
 }
