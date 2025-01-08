@@ -6,7 +6,7 @@
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 17:35:23 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/08 15:48:17 by tishihar         ###   ########.fr       */
+/*   Updated: 2025/01/08 16:06:16 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,24 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	//ここまできたらスタックAは準備完了
+	print_stack(&st_a);
+
 	return (0);
+}
+
+void	print_stack(t_stack *stack)
+{
+	t_node	*curr;
+
+	if (!stack || !stack->top)
+	{
+		printf("Stack is empty\n");
+		return;
+	}
+	curr = stack->top;
+	while (curr)
+	{
+		printf("%d\n", curr->value);
+		curr = curr->next;
+	}
 }

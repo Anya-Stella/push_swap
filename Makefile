@@ -43,19 +43,8 @@ INCLUDES := -I$(INC_DIR) -I$(LIBFT_INC_DIR)
 #===============================================================================
 
 SRCS := \
-    act_interface0.c \
-    act_interface1.c \
-    act_interface2.c \
-    assert.c \
-    compress0.c \
-    compress1.c \
-    dllst0.c \
-    dllst1.c \
-    load.c \
-    sort_large.c \
-    sort_small.c \
-    std_act0.c \
-    std_act1.c \
+    stack_utils.c \
+	validation.c \
     main.c
 
 # replace object (.c → .o)
@@ -79,16 +68,16 @@ dev: all
 
 # main(linker) rule
 $(NAME): $(LIBFT) $(OBJS)
-    $(CC) $(CFLAGS) $(OBJS) -o $@ $(LIBFT) $(LDFLAGS)
+	$(CC) $(CFLAGS) $(OBJS) -o $@ $(LIBFT) $(LDFLAGS)
 
 # compile rule
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-    @mkdir -p $(OBJ_DIR)
-    $(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	@mkdir -p $(OBJ_DIR)
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 # generate libft.a
 $(LIBFT):
-    $(MAKE) -C $(LIBFT_DIR)
+	$(MAKE) -C $(LIBFT_DIR)
 
 # cleans
 clean:
