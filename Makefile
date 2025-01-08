@@ -43,7 +43,7 @@ INCLUDES := -I$(INC_DIR) -I$(LIBFT_INC_DIR)
 #===============================================================================
 
 SRCS := \
-    stack_utils.c \
+    stack_init_utils.c \
 	validation.c \
     main.c
 
