@@ -6,7 +6,7 @@
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 18:53:58 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/08 19:15:10 by tishihar         ###   ########.fr       */
+/*   Updated: 2025/01/08 20:25:42 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,17 @@ typedef struct s_stack
 int		main(int argc, char **argv);
 bool	init_set_project(t_stack *stack_a, char **argv);
 
-// stack_utils
+// stack_init_utils
 void	init_stack(t_stack *stack_);
 void	vacuum_stack_nodes(t_stack *stack_);
 t_node	*create_node(int value);
+
+// stack_utils
+bool	swap(t_stack *stack_);
 void	push_top(t_stack *stack_, t_node *node_);
 void	push_bottom(t_stack *stack_, t_node *node_);
+t_node	*pop_top(t_stack *stack_);
+t_node	*pop_bottom(t_stack *stack_);
 
 // validation
 bool	validation_atoi(const char *str, int *out);
@@ -59,7 +64,6 @@ void	rr(t_stack *a, t_stack *b);
 void	rra(t_stack *a);
 void	rrb(t_stack *b);
 void	rrr(t_stack *a, t_stack *b);
-bool	swap(t_stack *stack_);
 
 // test
 void	print_stack(t_stack *stack);
