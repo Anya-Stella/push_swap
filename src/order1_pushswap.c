@@ -42,6 +42,29 @@ void	sa(t_stack *a)
 // swap b
 void	sb(t_stack *b)
 {
+	t_node	*first;
+	t_node	*second;
+
+	if (!b || b->size < 2)
+		return ;
+	
+
+	first = b->top;
+	second = b->top->next;
+
+	//  swap
+	first->next = second->next;
+	if (second->next)
+		second->next->prev  = first;
+	second->prev = NULL;
+	second->next = first;
+
+	b->top = second;
+
+	if (b->size == 2)
+		b->bottom = first;
+	
+	write(1, "sb\n", 3);
 	
 }
 
