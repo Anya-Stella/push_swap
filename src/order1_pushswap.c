@@ -15,7 +15,7 @@
 // swap a
 void	sa(t_stack *a)
 {
-
+	
 }
 
 // swap b
@@ -31,13 +31,13 @@ void	ss(t_stack *a, t_stack *b)
 }
 
 // push a
-void	pa()
+void	pa(t_stack *a)
 {
 
 }
 
 // push	b
-void	pb()
+void	pb(t_stack *b)
 {
 	
 }
