@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_utils.c                                      :+:      :+:    :+:   */
+/*   stack_init_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 18:57:40 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/08 15:49:57 by tishihar         ###   ########.fr       */
+/*   Updated: 2025/01/08 19:27:22 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,38 +49,3 @@ t_node	*create_node(int value)
 	return (node_);
 }
 
-void	push_top(t_stack *stack_, t_node *node_)
-{
-	if (!stack_ || !node_)
-		return ;
-	if (stack_->size == 0)
-	{
-		stack_->top = node_;
-		stack_->bottom = node_;
-	}
-	else
-	{
-		node_->next = stack_->top;
-		stack_->top->prev = node_;
-		stack_->top = node_;
-	}
-	stack_->size += 1;
-}
-
-void	push_bottom(t_stack *stack_, t_node *node_)
-{
-	if (!stack_ || !node_)
-		return ;
-	if (stack_->size == 0)
-	{
-		stack_->top = node_;
-		stack_->bottom = node_;
-	}
-	else
-	{
-		node_->prev = stack_->bottom;
-		stack_->bottom->next = node_;
-		stack_->bottom = node_;
-	}
-	stack_->size += 1;
-}

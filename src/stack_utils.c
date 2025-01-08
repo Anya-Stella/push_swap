@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   order4_utils.c                                     :+:      :+:    :+:   */
+/*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 19:08:17 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/08 19:14:17 by tishihar         ###   ########.fr       */
+/*   Updated: 2025/01/08 19:27:58 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,40 @@ bool	swap(t_stack *stack_)
 	if (stack_->size == 2)
 		stack_->bottom = first;
 	return (true);
+}
+
+void	push_top(t_stack *stack_, t_node *node_)
+{
+	if (!stack_ || !node_)
+		return ;
+	if (stack_->size == 0)
+	{
+		stack_->top = node_;
+		stack_->bottom = node_;
+	}
+	else
+	{
+		node_->next = stack_->top;
+		stack_->top->prev = node_;
+		stack_->top = node_;
+	}
+	stack_->size += 1;
+}
+
+void	push_bottom(t_stack *stack_, t_node *node_)
+{
+	if (!stack_ || !node_)
+		return ;
+	if (stack_->size == 0)
+	{
+		stack_->top = node_;
+		stack_->bottom = node_;
+	}
+	else
+	{
+		node_->prev = stack_->bottom;
+		stack_->bottom->next = node_;
+		stack_->bottom = node_;
+	}
+	stack_->size += 1;
 }
