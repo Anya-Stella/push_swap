@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   order1_pushswap.c                                   :+:      :+:    :+:   */
+/*   order1_pushswap.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/08 17:05:10 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/08 17:08:03 by tishihar         ###   ########.fr       */
+/*   Created: 2025/01/09 15:41:20 by tishihar          #+#    #+#             */
+/*   Updated: 2025/01/09 15:42:28 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,10 @@ void	ss(t_stack *a, t_stack *b)
 void	pa(t_stack *a, t_stack *b)
 {
 	t_node	*node;
-	// bとってくる
 
 	node = pop_top(b);
 	if (!node)
 		return ;
-	
-	// aにぷっしゅする
 	if (push_top(a, node))
 		write(1, "pa\n", 3);
 }
@@ -56,7 +53,6 @@ void	pb(t_stack *a, t_stack *b)
 	node = pop_top(a);
 	if (!node)
 		return ;
-	
 	if (push_top(b, node))
 		write(1, "pb\n", 3);
 }

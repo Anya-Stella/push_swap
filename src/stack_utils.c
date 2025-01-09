@@ -6,7 +6,7 @@
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 19:08:17 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/09 14:10:25 by tishihar         ###   ########.fr       */
+/*   Updated: 2025/01/09 15:45:56 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,14 @@ bool	swap(t_stack *stack_)
 
 	if (!stack_ || stack_->size < 2)
 		return (false);
-
 	first = stack_->top;
 	second = stack_->top->next;
-
-	//  swap
 	first->next = second->next;
 	if (second->next)
-		second->next->prev  = first;
+		second->next->prev = first;
 	second->prev = NULL;
 	second->next = first;
-
 	stack_->top = second;
-
 	if (stack_->size == 2)
 		stack_->bottom = first;
 	return (true);
@@ -53,7 +48,6 @@ bool	push_top(t_stack *stack_, t_node *node_)
 		stack_->top = node_;
 	}
 	stack_->size += 1;
-
 	return (true);
 }
 
@@ -73,7 +67,6 @@ bool	push_bottom(t_stack *stack_, t_node *node_)
 		stack_->bottom = node_;
 	}
 	stack_->size += 1;
-
 	return (true);
 }
 
@@ -83,10 +76,7 @@ t_node	*pop_top(t_stack *stack_)
 
 	if (!stack_ || stack_->size == 0)
 		return (NULL);
-	
-	// pop
 	temp = stack_->top;
-
 	if (stack_->size == 1)
 	{
 		stack_->bottom = NULL;
@@ -98,8 +88,6 @@ t_node	*pop_top(t_stack *stack_)
 		stack_->top->prev = NULL;
 	}
 	stack_->size--;
-
-	// seikei
 	temp->next = NULL;
 	temp->prev = NULL;
 	return (temp);
@@ -111,9 +99,7 @@ t_node	*pop_bottom(t_stack *stack_)
 
 	if (!stack_ || stack_->size == 0)
 		return (NULL);
-	
 	temp = stack_->bottom;
-
 	if (stack_->size == 1)
 	{
 		stack_->bottom = NULL;
@@ -125,8 +111,6 @@ t_node	*pop_bottom(t_stack *stack_)
 		stack_->bottom->next = NULL;
 	}
 	stack_->size--;
-
-	// seikei
 	temp->next = NULL;
 	temp->prev = NULL;
 	return (temp);
