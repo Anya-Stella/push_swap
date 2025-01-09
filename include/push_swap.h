@@ -6,7 +6,7 @@
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 18:53:58 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/08 20:25:42 by tishihar         ###   ########.fr       */
+/*   Updated: 2025/01/09 14:10:52 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ t_node	*create_node(int value);
 
 // stack_utils
 bool	swap(t_stack *stack_);
-void	push_top(t_stack *stack_, t_node *node_);
-void	push_bottom(t_stack *stack_, t_node *node_);
+bool	push_top(t_stack *stack_, t_node *node_);
+bool	push_bottom(t_stack *stack_, t_node *node_);
 t_node	*pop_top(t_stack *stack_);
 t_node	*pop_bottom(t_stack *stack_);
 

@@ -6,7 +6,7 @@
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 19:08:17 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/08 20:35:52 by tishihar         ###   ########.fr       */
+/*   Updated: 2025/01/09 14:10:25 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ bool	swap(t_stack *stack_)
 	return (true);
 }
 
-void	push_top(t_stack *stack_, t_node *node_)
+bool	push_top(t_stack *stack_, t_node *node_)
 {
 	if (!stack_ || !node_)
-		return ;
+		return (false);
 	if (stack_->size == 0)
 	{
 		stack_->top = node_;
@@ -53,12 +53,14 @@ void	push_top(t_stack *stack_, t_node *node_)
 		stack_->top = node_;
 	}
 	stack_->size += 1;
+
+	return (true);
 }
 
-void	push_bottom(t_stack *stack_, t_node *node_)
+bool	push_bottom(t_stack *stack_, t_node *node_)
 {
 	if (!stack_ || !node_)
-		return ;
+		return (false);
 	if (stack_->size == 0)
 	{
 		stack_->top = node_;
@@ -71,6 +73,8 @@ void	push_bottom(t_stack *stack_, t_node *node_)
 		stack_->bottom = node_;
 	}
 	stack_->size += 1;
+
+	return (true);
 }
 
 t_node	*pop_top(t_stack *stack_)

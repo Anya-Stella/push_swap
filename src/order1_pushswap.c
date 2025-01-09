@@ -34,13 +34,29 @@ void	ss(t_stack *a, t_stack *b)
 }
 
 // push a
-void	pa(t_stack *a)
+void	pa(t_stack *a, t_stack *b)
 {
+	t_node	*node;
+	// bとってくる
+
+	node = pop_top(b);
+	if (!node)
+		return ;
 	
+	// aにぷっしゅする
+	if (push_top(a, node))
+		write(1, "pa\n", 3);
 }
 
 // push	b
-void	pb(t_stack *b)
+void	pb(t_stack *a, t_stack *b)
 {
+	t_node	*node;
+
+	node = pop_top(a);
+	if (!node)
+		return ;
 	
+	if (push_top(b, node))
+		write(1, "pb\n", 3);
 }
