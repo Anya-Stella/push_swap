@@ -6,7 +6,7 @@
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 21:21:31 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/08 15:54:27 by tishihar         ###   ########.fr       */
+/*   Updated: 2025/01/12 21:30:23 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,24 @@ bool	is_already_exist(t_stack *stack_, int value)
 		curr = curr->next;
 	}
 	return (false);
+}
+
+bool	is_sorted(t_stack *stack)
+{
+	t_node	*curr;
+
+	if (!stack)
+		return (true);
+
+	if (stack->size < 2)
+		return (true);
+	
+	curr = stack->top->next;
+	while (curr)
+	{
+		if (curr->prev->value > curr->value)
+			return (false);
+		curr = curr->next;
+	}
+	return (true);
 }

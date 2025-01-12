@@ -6,7 +6,7 @@
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 15:50:56 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/12 21:07:28 by tishihar         ###   ########.fr       */
+/*   Updated: 2025/01/12 21:14:36 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,17 +41,20 @@ bool	assign_rank(t_stack *a)
 	return (true);
 }
 
+void	radix_sort_helper(t_stack *a, t_stack *b)
+{
+
+}
+
 // mainのソート関数：（入力：スタック, 出力：完了？）
-bool	radix_sort(t_stack *a, t_stack *b)
+void	radix_sort(t_stack *a, t_stack *b)
 {
 	//　まずはランクつけO(n^2)
 	if (!assign_rank(a))
-		return (false);
+		return ;
 		
 	// ランクをradix sortでソートしていく
+	radix_sort_helper(a, b);
 	
-	
-
-
-	return (true);
+	return ;
 }
