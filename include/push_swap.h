@@ -6,7 +6,7 @@
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 18:53:58 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/12 20:13:51 by tishihar         ###   ########.fr       */
+/*   Updated: 2025/01/12 21:08:35 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct s_stack
 // main
 int		main(int argc, char **argv);
 bool	init_set_project(t_stack *stack_a, char **argv);
+void	start_sort(t_stack *a, t_stack *b);
 
 // stack_init_utils
 void	init_stack(t_stack *stack_);
@@ -69,4 +70,9 @@ void	rrr(t_stack *a, t_stack *b);
 
 // test
 void	print_stack(t_stack *stack);
+
+// sort
+bool	assign_rank(t_stack *a);
+bool	radix_sort(t_stack *a, t_stack *b);
+
 #endif

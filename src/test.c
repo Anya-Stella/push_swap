@@ -6,7 +6,7 @@
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 16:31:11 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/08 16:33:14 by tishihar         ###   ########.fr       */
+/*   Updated: 2025/01/12 20:46:22 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ void	print_stack(t_stack *stack)
 	curr = stack->top;
 	while (curr)
 	{
-		printf("%d\n", curr->value);
+		// printf("%d\n", curr->value);
+		printf("%d\n", curr->rank);
 		curr = curr->next;
 	}
 }
