@@ -6,15 +6,25 @@
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 15:50:56 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/09 17:06:50 by tishihar         ###   ########.fr       */
+/*   Updated: 2025/01/12 20:11:48 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+bool	assign_rank(t_stack *a)
+{
+
+}
+
 // mainのソート関数：（入力：スタック, 出力：完了？）
 bool	sort_main(t_stack *a, t_stack *b)
 {
-	// ra()
-	// rb()
+	//　まずはランクつけO(n^2)
+	assign_rank(a);
+
+
+
+	// ランクをradix sortでソートしていく
+
 }

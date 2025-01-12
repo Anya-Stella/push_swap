@@ -6,7 +6,7 @@
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 18:57:40 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/09 15:40:35 by tishihar         ###   ########.fr       */
+/*   Updated: 2025/01/12 20:14:29 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,6 @@ t_node	*create_node(int value)
 	node_->value = value;
 	node_->prev = NULL;
 	node_->next = NULL;
+	node_->rank = 0;
 	return (node_);
 }
