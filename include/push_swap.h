@@ -6,7 +6,7 @@
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 18:53:58 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/12 21:08:35 by tishihar         ###   ########.fr       */
+/*   Updated: 2025/01/13 13:50:31 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ t_node	*pop_bottom(t_stack *stack_);
 // validation
 bool	validation_atoi(const char *str, int *out);
 bool	is_already_exist(t_stack *stack_, int value);
+bool	is_sorted(t_stack *stack);
 
 // order
 void	sa(t_stack *a);
@@ -73,6 +74,8 @@ void	print_stack(t_stack *stack);
 
 // sort
 bool	assign_rank(t_stack *a);
-bool	radix_sort(t_stack *a, t_stack *b);
+int		get_max_bits(int size);
+void	radix_sort_helper(t_stack *a, t_stack *b, int max_bits);
+void	radix_sort(t_stack *a, t_stack *b);
 
 #endif

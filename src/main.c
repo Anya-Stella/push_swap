@@ -6,7 +6,7 @@
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 17:35:23 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/12 21:07:17 by tishihar         ###   ########.fr       */
+/*   Updated: 2025/01/13 13:56:04 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,16 @@ int		main(int argc, char **argv)
 		write(2, "Error\n", 6);
 		return (1);
 	}
+	if (is_sorted(&st_a))
+	{
+		vacuum_stack_nodes(&st_a);
+		return (0);
+	}
 	//ここまできたらスタックAは準備完了
-	// TODO: sorted?
 	
 	start_sort(&st_a, &st_b);
 	
-	print_stack(&st_a);
+	// print_stack(&st_a);
 
 	return (0);
 }
