@@ -6,7 +6,7 @@
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 17:11:45 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/09 15:44:14 by tishihar         ###   ########.fr       */
+/*   Updated: 2025/01/13 17:45:56 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	rra(t_stack *a)
 	if (!node)
 		return ;
 	if (push_top(a, node))
-		write (1, "rra\n", 3);
+		write (1, "rra\n", 4);
 }
 
 // reverse rotate b
@@ -33,7 +33,7 @@ void	rrb(t_stack *b)
 	if (!node)
 		return ;
 	if (push_top(b, node))
-		write (1, "rrb\n", 3);
+		write (1, "rrb\n", 4);
 }
 
 // do rra and rrb
@@ -55,5 +55,5 @@ void	rrr(t_stack *a, t_stack *b)
 		return ;
 	}
 	if (push_top(a, node_a) && push_top(b, node_b))
-		write (1, "rrr\n", 3);
+		write (1, "rrr\n", 4);
 }

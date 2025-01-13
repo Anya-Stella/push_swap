@@ -6,7 +6,7 @@
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 16:57:52 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/13 17:39:21 by tishihar         ###   ########.fr       */
+/*   Updated: 2025/01/13 17:55:52 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	simple_sort_v3(t_stack *a)
 	if (a->top->rank == 1)
 	{
 		sa(a);
-		rra(a);
+		ra(a);
 	}
 	else if (a->top->rank == 2)
 	{
@@ -30,13 +30,13 @@ void	simple_sort_v3(t_stack *a)
 	}
 	else if (a->top->rank == 3)
 	{
-		if (a->top->next->rank == 1)
-			ra(a);
 		if (a->top->next->rank == 2)
 		{
 			sa(a);
 			rra(a);
 		}
+		if (a->top->next->rank == 1)
+			ra(a);
 	}
 }
 // void	simple_sort_v5()
