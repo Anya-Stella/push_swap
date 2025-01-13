@@ -51,6 +51,7 @@ SRCS := \
 	order3_rotate_reverse.c \
 	test.c \
 	push_swap.c \
+	push_swap_simple.c \
     main.c
 
 # replace object (.c → .o)
