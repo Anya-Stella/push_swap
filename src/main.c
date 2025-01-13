@@ -6,7 +6,7 @@
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 17:35:23 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/13 13:56:04 by tishihar         ###   ########.fr       */
+/*   Updated: 2025/01/13 16:46:46 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ bool	init_set_project(t_stack *stack_a, char **argv)
 	return (true);
 }
 
-void	start_sort(t_stack *a, t_stack *b)
+void	sort(t_stack *a, t_stack *b)
 {
 	radix_sort(a, b);
 }
@@ -63,9 +63,11 @@ int		main(int argc, char **argv)
 	}
 	//ここまできたらスタックAは準備完了
 	
-	start_sort(&st_a, &st_b);
+	sort(&st_a, &st_b);
 	
 	// print_stack(&st_a);
+	vacuum_stack_nodes(&st_a);
+	vacuum_stack_nodes(&st_b);
 
 	return (0);
 }
