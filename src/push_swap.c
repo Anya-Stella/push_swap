@@ -6,7 +6,7 @@
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 15:50:56 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/13 14:28:58 by tishihar         ###   ########.fr       */
+/*   Updated: 2025/01/13 14:38:25 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,13 @@ void	radix_sort_helper(t_stack *a, t_stack *b, int max_bits)
 
 	curr_bit = 0;
 	size = a->size;
-
-	// max_bitsぶんまわす
 	while (curr_bit < max_bits)// 0 < 7
 	{
 		count = size;// 500
 		while (count--)
 		{
+			if (is_sorted(a) && a->size == size)
+				return ;
 			bit = (a->top->rank >> curr_bit) & 1;
 			if (bit == 0)
 				pb(a, b);
