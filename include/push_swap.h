@@ -6,7 +6,7 @@
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 18:53:58 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/13 21:22:58 by tishihar         ###   ########.fr       */
+/*   Updated: 2025/01/14 13:27:53 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	rrb(t_stack *b);
 void	rrr(t_stack *a, t_stack *b);
 
 // test
-void	print_stack(t_stack *stack);
+// void	print_stack(t_stack *stack);
 
 // sort
 bool	assign_rank(t_stack *a);

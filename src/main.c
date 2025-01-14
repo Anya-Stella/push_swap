@@ -6,7 +6,7 @@
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 17:35:23 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/14 12:58:20 by tishihar         ###   ########.fr       */
+/*   Updated: 2025/01/14 14:46:08 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	main(int argc, char **argv)
 {
 	t_stack	st_a;
 	t_stack	st_b;
-
+	
 	init_stack(&st_a);
 	init_stack(&st_b);
 	if (argc <= 1)
