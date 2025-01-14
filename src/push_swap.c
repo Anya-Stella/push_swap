@@ -6,7 +6,7 @@
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 15:50:56 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/14 13:07:56 by tishihar         ###   ########.fr       */
+/*   Updated: 2025/01/14 13:11:12 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,11 @@ bool	assign_rank(t_stack *a)
 	return (true);
 }
 
-static	int		get_max_bits(int size)
+static	int	get_max_bits(int size)
 {
-	int	max_bits = 0;
+	int	max_bits;
 
+	max_bits = 0;
 	while ((size >> max_bits) != 0)
 		max_bits++;
 	return (max_bits);

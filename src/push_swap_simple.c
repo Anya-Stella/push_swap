@@ -6,7 +6,7 @@
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 16:57:52 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/14 12:47:47 by tishihar         ###   ########.fr       */
+/*   Updated: 2025/01/14 13:12:50 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ static void	push_min(t_stack *a, t_stack*b)
 	t_node	*curr;
 	int		min;
 
-
-	// min = 5
 	curr = a->top;
 	min = a->top->rank;
 	while (curr)
@@ -28,11 +26,10 @@ static void	push_min(t_stack *a, t_stack*b)
 			min = curr->rank;
 		curr = curr->next;
 	}
-	// 最小値の場所まで最短で回す
 	if (a->bottom->rank == min || a->bottom->prev->rank == min)
 	{
 		while (a->top->rank != min)
-			rra(a);		
+			rra(a);
 	}
 	else
 	{
@@ -54,14 +51,13 @@ void	simple_sort_v2(t_stack *a)
 // 3以下の場合のソート
 void	simple_sort_v3(t_stack *a)
 {
-	int top;
-	int mid;
-	int bot;
+	int	top;
+	int	mid;
+	int	bot;
 
 	top = a->top->value;
 	mid = a->top->next->value;
 	bot = a->bottom->value;
-	
 	if (top > mid && mid < bot && top < bot)
 		sa(a);
 	else if (top > mid && mid > bot && top > bot)
@@ -91,4 +87,3 @@ void	simple_sort_v5(t_stack *a, t_stack*b)
 	pa(a, b);
 	pa(a, b);
 }
-
