@@ -6,7 +6,7 @@
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 15:50:56 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/13 14:38:25 by tishihar         ###   ########.fr       */
+/*   Updated: 2025/01/13 20:47:25 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ bool	assign_rank(t_stack *a)
 	return (true);
 }
 
-int		get_max_bits(int size)
+static	int		get_max_bits(int size)
 {
 	int	max_bits = 0;
 
@@ -50,7 +50,7 @@ int		get_max_bits(int size)
 	return (max_bits);
 }
 
-void	radix_sort_helper(t_stack *a, t_stack *b, int max_bits)
+static	void	radix_sort_helper(t_stack *a, t_stack *b, int max_bits)
 {
 	int	curr_bit;
 	int	bit;

@@ -6,7 +6,7 @@
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 17:35:23 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/13 17:39:14 by tishihar         ###   ########.fr       */
+/*   Updated: 2025/01/14 12:20:29 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,12 @@ bool	init_set_project(t_stack *stack_a, char **argv)
 
 void	sort(t_stack *a, t_stack *b)
 {
-	if (a->size <= 3)
+	if (a->size <= 2)
+		simple_sort_v2(a);
+	else if (a->size <= 3)
 		simple_sort_v3(a);
 	else if (a->size <= 5)
-	{
-		radix_sort(a, b);
-	}
+		simple_sort_v5(a, b);
 	else
 		radix_sort(a, b);
 }
