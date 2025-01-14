@@ -1,5 +1,15 @@
 a.out*
-push_swap_visualizer
+push_swap
+
 .vscode
+bin
 checker_linux
+push_swap_visualizer
+commands.md
+
+
+
+
+
+
 .gitignore
