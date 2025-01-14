@@ -6,7 +6,7 @@
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 17:35:23 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/14 12:20:29 by tishihar         ###   ########.fr       */
+/*   Updated: 2025/01/14 12:58:20 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	sort(t_stack *a, t_stack *b)
 		radix_sort(a, b);
 }
 
-int		main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_stack	st_a;
 	t_stack	st_b;
@@ -68,13 +68,8 @@ int		main(int argc, char **argv)
 		vacuum_stack_nodes(&st_a);
 		return (0);
 	}
-	//ここまできたらスタックAは準備完了
-	
 	sort(&st_a, &st_b);
-	
-	// print_stack(&st_a);
 	vacuum_stack_nodes(&st_a);
 	vacuum_stack_nodes(&st_b);
-
 	return (0);
 }

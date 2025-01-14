@@ -6,7 +6,7 @@
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 21:21:31 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/13 13:52:05 by tishihar         ###   ########.fr       */
+/*   Updated: 2025/01/14 12:59:03 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ bool	is_sorted(t_stack *stack)
 		return (true);
 	if (stack->size < 2)
 		return (true);
-	
 	curr = stack->top->next;
 	while (curr)
 	{

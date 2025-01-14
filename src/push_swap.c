@@ -6,12 +6,13 @@
 /*   By: tishihar <tishihar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 15:50:56 by tishihar          #+#    #+#             */
-/*   Updated: 2025/01/13 20:47:25 by tishihar         ###   ########.fr       */
+/*   Updated: 2025/01/14 13:07:56 by tishihar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// o(n^2)
 bool	assign_rank(t_stack *a)
 {
 	t_node	*target;
@@ -20,7 +21,6 @@ bool	assign_rank(t_stack *a)
 
 	if (!a)
 		return (false);
-	
 	target = a->top;
 	while (target)
 	{
@@ -28,16 +28,13 @@ bool	assign_rank(t_stack *a)
 		curr = a->top;
 		while (curr)
 		{
-			// targetよりもcurrが小さい場合rank++
 			if (target->value > curr->value)
 				rank++;
 			curr = curr->next;
 		}
-
 		target->rank = rank;
 		target = target->next;
 	}
-
 	return (true);
 }
 
@@ -59,9 +56,9 @@ static	void	radix_sort_helper(t_stack *a, t_stack *b, int max_bits)
 
 	curr_bit = 0;
 	size = a->size;
-	while (curr_bit < max_bits)// 0 < 7
+	while (curr_bit < max_bits)
 	{
-		count = size;// 500
+		count = size;
 		while (count--)
 		{
 			if (is_sorted(a) && a->size == size)
@@ -74,26 +71,18 @@ static	void	radix_sort_helper(t_stack *a, t_stack *b, int max_bits)
 		}
 		while (b->size)
 			pa(a, b);
-		
 		curr_bit++;
 	}
 }
 
-// mainのソート関数：（入力：スタック, 出力：完了？）
+// mainのソート関数：（入力：スタック）
 void	radix_sort(t_stack *a, t_stack *b)
 {
 	int	max_bits;
 
-
-	//　まずはランクつけO(n^2)
 	if (!assign_rank(a))
 		return ;
-
-	// 最大bit数
 	max_bits = get_max_bits(a->size);
-	
-	// ランクをradix sortでソートしていく
 	radix_sort_helper(a, b, max_bits);
-	
 	return ;
 }
